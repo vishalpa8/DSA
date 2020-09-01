@@ -55,6 +55,21 @@ void display(void) // Displaying the Elements.
 		cout << "\n";
 	}
 }
+// Reverse the elements.
+void reverse()
+{
+	struct node* temp, *next, *rev;
+	temp = head;
+	rev = NULL;
+	while (temp != NULL)
+	{
+		next = temp->next;
+		temp->next = rev;
+		rev = temp;
+		temp = next;
+	}
+	head = rev;
+}
 // Simply this function are used to be delete.
 void pop(int loc)
 {
@@ -291,6 +306,7 @@ int main()
 	cout << "3.Pop Elements in single link list.\n";
 	cout << "4.Push Elements in single link list at any place.\n";
 	cout << "5.Swap Elements in single link list.\n";
+	cout << "12.Reverse the Elements in single link list.\n";
 	cout << "6.Length of Elements in single link list.\n\n";
 	cout << "7.Add Elements in Double link list.\n";
 	cout << "8.Display Elements in Double link list.\n";
@@ -405,6 +421,9 @@ int main()
 				add1(give,location);
 			}
 			break;
+		case 12:
+			reverse();
+				break;
 
 
 		default: printf("Invalid data : \n");
