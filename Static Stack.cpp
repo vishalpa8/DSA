@@ -5,10 +5,11 @@
 using namespace std;
 int stack[5];
 int top = -1,len;
-int isfull(void);
-int isempty(void);
+int isfull(void); // for checking the Stack is full or not.
+int isempty(void); // for checking the stack is Empty or not.
 void push(int data)
 {
+	// used for push the elements in stack
 	if (isfull())
 	{
 		cout << " Stack is full.\n ";
@@ -25,6 +26,7 @@ void push(int data)
 
 void pop(void)
 {
+	// used for pop(delete) the elements in stack.
 	if (isempty())
 	{
 		cout << " stack is empty\n ";
@@ -37,6 +39,7 @@ void pop(void)
 }
 int length(void)
 {
+	// used for count the length of the elements in stack.
 	int count = 0;
 		for (int i = 0; i <=top; i++) {
 			count++;
@@ -48,6 +51,7 @@ int length(void)
 
 void display(void)
 {
+	// used for Travrse(display) the elements in stack.
 	if (isempty())
 	{
 		cout << "Stack is empty \n";
@@ -61,6 +65,7 @@ void display(void)
 }
 void pull(void)
 {
+	// used for Pull (top element) the elements in stack
 	if (isempty())
 	{
 		cout << "Stack is Empty \n";
