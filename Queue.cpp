@@ -5,7 +5,7 @@ int rear = 0, front = 0, queue[5],full;
 
 void push(int data) // pushing the elements.
 {
-	if (rear== 5 )
+	if (rear== 4)
 	{
 		cout << "Queue is full.\n";
 	}
