@@ -1,6 +1,6 @@
 #include<iostream>
 #include<stdlib.h>
-#include<stdio.h>
+#include<queue>
 using namespace std;
 struct node
 {
@@ -175,6 +175,27 @@ struct node* InSucc(struct node* p)
    return temp;
 }
 
+void LevelOrder(struct node* root)
+{
+    queue<node*> q;
+	q.push(root);
+	
+	while(!q.empty())
+	{
+		struct node* current = q.front();
+		printf("%d ",current->data);
+		if(current->left!=NULL)
+		{
+			q.push(current->left);
+		}
+		if(current->right!=NULL)
+		{
+			q.push(current->right);
+		}
+           q.pop();
+	}
+}
+
 
 int main()
 {
@@ -188,7 +209,8 @@ int main()
 	cout << "5.Traverse the element Using Inorder\n";
 	cout << "6.Traverse the element Using preorder\n";
 	cout << "7.Traverse the element Using postorder\n";
-	cout << "8.exit\n\n";
+	cout << "8.Level Order Traversal\n";
+	cout << "9.exit\n\n";
 	
 
 
@@ -240,7 +262,10 @@ int main()
          case 7:
 			  postorder(head);
 			  break;
-	     case 8: 
+		 case 8:
+			  LevelOrder(head);
+			  break;
+	     case 9: 
 			 exit(0);
 			 break;
 
