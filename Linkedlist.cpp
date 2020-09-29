@@ -53,7 +53,7 @@ void display(void) // Displaying the Elements.
 			temp = temp->next;
 		}
 		cout << "\n";
-	}
+ }
 }
 // Reverse the elements.
 void reverse()
