@@ -7,7 +7,11 @@ int rear = 0, front = 0, queue[capacity],full;
 
 void push(int data) // pushing the elements.
 {
+<<<<<<< HEAD
 	if (rear== capacity )
+=======
+	if (rear== 4)
+>>>>>>> 81397b404b829d813b1610c748acb8b57a9dfd79
 	{
 		cout << "Queue is full.\n";
 	}
