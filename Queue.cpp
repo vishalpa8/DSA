@@ -1,11 +1,13 @@
 #include<iostream>
 #include<stdio.h>
+
+#define capacity 5
 using namespace std;
-int rear = 0, front = 0, queue[5],full;
+int rear = 0, front = 0, queue[capacity],full;
 
 void push(int data) // pushing the elements.
 {
-	if (rear== 5 )
+	if (rear== capacity )
 	{
 		cout << "Queue is full.\n";
 	}
@@ -50,10 +52,10 @@ int main()
 
 {
 	int n,input;
-	printf("Queue in Data structure.\n\n");
+	printf("Queue Data structure.\n\n");
 	cout << "1.push the Elements in Queue\n";
-	cout << "2.Pop the Elements in Queue\n";
-	cout << "3.traverse the Elements in Queue\n";
+	cout << "2.traverse the Elements in Queue\n";
+	cout << "3.pop the Elements in Queue\n";
 	cout << "4.Exit\n\n";
 
 	while (1)
@@ -63,16 +65,11 @@ int main()
 		switch (n)
 		{
 		case 1:
-			
-			printf("how many number : ");
-			cin >> input;
-			for (int i = 0; i < input; i++)
-			{
 				int give;
 				cout << "Enter the Number : ";
 				cin >> give;
 				push(give);
-			}
+			
 			break;
 		case 2:
 			
