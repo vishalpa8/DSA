@@ -3,18 +3,15 @@
 using namespace std;
 typedef long long ll;
 
-int binarysearch(int *ar , int key,int n){
-	int a = 0, b = n-1;
-   
-	while(a<=b){
-		int mid = (a+b)/2;
-		if(ar[mid]==key){
-			return mid;
-		}
+int binarysearch(int *ar,int key,int n){
+	int mid = 0;
+    for(int b = n/2; b >= 1; b/=2){
+	   while(mid+b < n && ar[mid+b] <=key) mid+=b;
+   }
+   if(ar[mid]==key){
+	   return mid;
+   }
 
-		if(ar[mid] > key) b = mid-1;
-		else a = mid+1;
-	}
 	return -1;
 }
 
