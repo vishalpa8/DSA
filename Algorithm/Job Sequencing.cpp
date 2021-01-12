@@ -42,7 +42,6 @@ int main()
 	}
 	int sum = 0;
 	for(auto i : v1){
-		cout << i << " ";
 		sum += i;
 	}
 	cout << sum << endl;
