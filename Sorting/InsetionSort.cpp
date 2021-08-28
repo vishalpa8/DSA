@@ -3,20 +3,13 @@ using namespace std;
 
 typedef long long ll;
 
-void swap(int* a ,int* b)
-{
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
 void insertionsort(int ar[],int n)
 {
-	int j,x;
-  for(int i=1; i<n; i++){
+    int j,x;
+    for(int i=1; i<n; i++){
 	   j= i-1;
-       x = ar[i];
-
-	   while(j>=0&& ar[j] > x){
+           x = ar[i];
+          while(j>=0&& ar[j] > x){
 		   ar[j+1] = ar[j];
 		    j--;
 	   }
