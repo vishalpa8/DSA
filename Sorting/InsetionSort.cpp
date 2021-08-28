@@ -38,7 +38,7 @@ int main()
 	{
 		cout << ar[i] << " ";
 	}
-    cout << endl;
+        cout << endl;
 	return 0;
 }
 
