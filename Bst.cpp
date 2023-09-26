@@ -10,59 +10,48 @@ struct node
 };
 struct node* head = NULL;
  
-void append(int data)
-{
+void append(int data){
 	struct node* temp;
 	temp = (struct node*)malloc(sizeof(struct node));
-			temp->data=data;
-			temp->right=NULL;
-			temp->left=NULL;
+	temp->data=data;
+	temp->right=NULL;
+	temp->left=NULL;
 
 			
-		if(head==NULL)
-		{
-		   head = temp; 
-		}	
-		else
-		{
-          struct node *curr,*p;
-		  curr = head;
-		  p = NULL;
-		 while(curr)
-		 {
-			 p=curr;
-			 if(data > curr->data)
-              {
-				  curr = curr->right;
-			  }
-			 else
-				 curr = curr->left;
-		 }	 
-		    if(p->data > data)
-			{
-				p->left = temp;
+	if(head==NULL){
+		head = temp; 
+	}	
+	else{
+		struct node *curr,*p;
+		curr = head;
+		p = NULL;
+		while(curr){
+			p=curr;
+			if(data > curr->data){
+				curr = curr->right;
 			}
 			else
-				p->right = temp;
-
+				curr = curr->left;
 		}
-	}
-int height(struct node* p)
-{
-   int x,y;
+		if(p->data > data){
+			p->left = temp;
+		}
+		else{
+			p->right = temp;
+		}
+	}	 	
+}
+
+int height(struct node* p){
    if(p==NULL)
 	   return 0;
-     
 
    return max(height(p->right),height(p->left))+1;
 }
 
 
-void preorder(struct node* p)
-{
-	if(p)
-	{
-
+void preorder(struct node* p){
+	if(p){
 		cout << p->data << " " ;
 		preorder(p->left);
 		preorder(p->right);
@@ -70,10 +59,8 @@ void preorder(struct node* p)
 
 }
 
-void inorder(struct node *p)
-{
-   if(p)
-   {
+void inorder(struct node *p){
+   if(p){
 	   inorder(p->left);
 	   cout << p->data << " " ;
 	   inorder(p->right);
@@ -81,12 +68,12 @@ void inorder(struct node *p)
 }
 
 
-void postorder(struct node *p)
-{
-  if(p)
+void postorder(struct node *p){
+  if(p){
 	  preorder(p->left);
 	  preorder(p->right);
 	  cout << p->data << " ";
+  }
 }
 
 
@@ -130,17 +117,13 @@ struct node* InSucc(struct node* p)
 
  struct node* pop(struct node* temp,int data)
 {
-   if(temp == NULL)
-   {
+   if(temp == NULL){
 	   cout << "Tree is empty";
    }
-
-    else if(temp->data > data)
-	{
+   else if(temp->data > data){
 		temp->left = pop(temp->left,data);
 	}
-   else if(temp->data < data ) 
-   {
+   else if(temp->data < data ){
 	   temp->right = pop(temp->right,data);
    }
 
@@ -175,13 +158,11 @@ struct node* InSucc(struct node* p)
    return temp;
 }
 
-void LevelOrder(struct node* root)
-{
+void LevelOrder(struct node* root){
     queue<node*> q;
 	q.push(root);
 	
-	while(!q.empty())
-	{
+	while(!q.empty()){
 		struct node* current = q.front();
 		printf("%d ",current->data);
 		if(current->left!=NULL)

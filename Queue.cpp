@@ -6,8 +6,7 @@ int rear = 0, front = 0, Queue[capacity],full;
 
 void push(int data) // pushing the elements.
 {
-	if (rear == capacity )
-	{
+	if (rear == capacity){
 		cout << "Queue is full.\n";
 	}
 	else {
@@ -30,18 +29,16 @@ void traverse(void)  // traversing the Elements or printing.
 }
 void pop()  // Delete (Pop) the elements from the queue.
 {
-	if (front == rear)
-	{
+	if (front == rear){
 		cout << "Queue is Empty.\n";
 	}
-	else
-	{
+	else{
 		cout << "Deleted : " << Queue[front] << endl;
 		
-		for (int i=0;i<rear;i++)
-		{
+		for (int i=0;i<rear;i++){
 			Queue[i] = Queue[i + 1];
 		}
+		rear--;
 	}
 }
 

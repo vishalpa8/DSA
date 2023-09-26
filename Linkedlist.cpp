@@ -2,14 +2,12 @@
 #include<stdlib.h>
 #include<iostream>
 using namespace std;
-struct node
-{
+struct node{
 	// definition of Single linked list structure.
 	int data;
 	struct node* next;
 };
-struct Doublelinkedlist
-{
+struct Doublelinkedlist{
 	//Definition of Double linked list structure.
 	int info;
 	struct Doublelinkedlist* left;
@@ -25,6 +23,7 @@ void push(int data)
 	temp = ((struct node*)malloc(sizeof(struct node)));
 	temp->data = data;
 	temp->next = NULL;
+
 	if (head == NULL) {
 		head = temp;
 	}
@@ -39,6 +38,7 @@ void push(int data)
 	}
 	
 }
+
 void display(void) // Displaying the Elements.
 {
 	struct node* temp;
@@ -56,8 +56,7 @@ void display(void) // Displaying the Elements.
  }
 }
 // Reverse the elements.
-void reverse()
-{
+void reverse(){
 	struct node* temp, *next, *rev;
 	temp = head;
 	rev = NULL;
