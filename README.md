@@ -3,7 +3,7 @@
 File or Code for Every kind of Algorithm and Data Structure
 with problems with different approaches.
 
-# Algorithm:-    
+#Algorithm:-    
     - i will kept all the algorithms which is necessary and it will give you boost in your problem solving.
 
 # Data Structure:-
