@@ -97,7 +97,7 @@ void pop(int loc)
 		
 	}
 }
-// Add a Number where you want like starting,middle or end.
+// Add a Number to any place where you want like starting,middle or end.
 void add(int data,int loc)
 {
 	struct node* temp;
