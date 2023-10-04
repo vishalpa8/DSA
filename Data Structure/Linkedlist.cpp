@@ -292,6 +292,30 @@ void add1(int data,int location) {
 		p->right = temp;
 	}
 }
+
+Doublelinkedlist* sortedInsert(Doublelinkedlist* llist, int data) {
+    
+    Doublelinkedlist* node = (Doublelinkedlist*)malloc(sizeof(Doublelinkedlist));
+    node->info = data;
+    node->left = NULL;
+    node->right = NULL;
+    if(llist == NULL){
+        return node;
+    }
+    
+    if(llist->info >= data){
+        node->right = llist;
+        llist->left = node;
+        return node;
+    }
+    else{
+        llist->right = sortedInsert(llist->right, data);
+        node->left = llist;
+    }
+        
+    return llist;
+}
+
 int main()
 {
 	//Main function.
