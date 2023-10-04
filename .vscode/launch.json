@@ -1,6 +1,14 @@
 {
-        "version": "0.2.0",
-        "configurations": [{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "SolidRhombus",
+            "request": "launch",
+            "mainClass": "SolidRhombus",
+            "projectName": "DSA_9b941a23"
+        },
+        {
             "name": "g++.exe - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
@@ -25,6 +33,6 @@
                 }
             ],
             "preLaunchTask": "C/C++: g++.exe build active file"
-        }],
-        
+        }
+    ],
 }
